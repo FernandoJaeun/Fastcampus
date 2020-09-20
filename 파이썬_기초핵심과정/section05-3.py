@@ -49,5 +49,8 @@ q5 = ["A", "b", "c", "D", "e", "F", "G", "h"]
 print([s for s in q5 if s.islower()])
 
 
+
 q6 = ["A", "b", "c", "D", "e", "F", "G", "h"]
 print([s.upper() if s.islower() else s.lower() for s in q6])
+
+numbers = [x for x in range(1,100)]
