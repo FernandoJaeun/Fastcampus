@@ -48,3 +48,51 @@ with open('./resource/review.txt', 'r') as f:
         line = f.readline() # readline()은 한줄씩 읽는 메소드이고, 한줄을 읽으면 커서는 그 줄 마지막으로 이동하니
             # 다음 readline()이 오면 다음 줄을 읽는다. 그러다 젤 마지막 라인을 읽으면 끝. while문은 읽을게 없으니 False
             
+print('---------------------------------------------')
+print('---------------------------------------------')
+
+with open('./resource/review.txt', 'r') as f:   
+    contents = f.readlines()    # readline과 readlines의 큰 차이!
+    print(contents)
+    for c in contents:
+        print(c, end = "******")
+
+print()
+    
+    
+print('---------------------------------------------')
+print('---------------------------------------------')
+
+with open('./resource/score.txt', 'r') as f:
+    score = []
+    for line in f :
+        score.append(int(line))
+    print(score)
+print("평균 : {:3.3}".format(sum(score)/len(score)))
+
+print('---------------------------------------------')
+print('---------------------------------------------')
+
+with open('./resource/text1.txt', 'w') as f:
+    f.write("NiceMan!!")
+
+with open('./resource/text1.txt', 'a') as f:
+    f.write("NiceMan!!")
+
+from random import randint
+
+with open('./resource/text2.txt', 'w') as f:
+    for cnt in range(6):
+        f.write(str(randint(1,50)))
+        f.write('\n')
+
+print('---------------------------------------------')
+print('---------------------------------------------')
+
+with open('./resource/text2.txt', 'w') as fs:
+    list = ['Kim\n', 'Park\n', 'Sep\n']
+    fs.writelines(list) # 리스트를 쓰는 메소드 writelines
+
+    with open('./resource/text3.txt', 'w') as f:
+        print('Test!!', file = f)
+        print('Test!!!!!', file = fs)
