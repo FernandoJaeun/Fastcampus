@@ -44,8 +44,8 @@ print('')
 # WHERE Retrievel1
 # param1 = (3,)
 # c.execute('SELECT * FROM users WHERE id = ?', param1)
-# print('param1 : ', c.fetchone())
 # print('param1 : ', c.fetchall())
+# print('param1 : ', c.fetchone())
 
 # WHERE Retrievel2
 # param2 = 4
@@ -61,13 +61,13 @@ print('')
 
 
 # WHERE Retrievel4
-param4 = (4,5)
-c.execute("SELECT * FROM users WHERE id IN(?,?)", param4)
-print('param4 : ', c.fetchall())
+# param4 = (4,5)
+# c.execute("SELECT * FROM users WHERE id IN(?,?)", param4)
+# print('param4 : ', c.fetchall())
 
 
 # Dump 출력
-with conn:
-    with open("./resource/test.sql", 'w') as f:
-        for line in conn.iterdump():
-            f.write(line +"\n")
+# with conn:
+#     with open("./resource/test.sql", 'w') as f:
+#         for line in conn.iterdump():
+#             f.write(line +"\n")
