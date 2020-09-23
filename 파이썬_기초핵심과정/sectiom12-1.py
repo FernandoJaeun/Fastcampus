@@ -34,7 +34,7 @@ c = conn.cursor() # conn이라는 DB로 눈을 돌림 (나는 사우론이다)
 #     )")
 
 # 데이터 삽입
-c.execute("INSERT INTO users VALUES(1, 'Kim', 'kim@naver.com', '010-0000-0000','kim.com',?)",(nowDateTime,))
+# c.execute("INSERT INTO users VALUES(1, 'Kim', 'kim@naver.com', '010-0000-0000','kim.com',?)",(nowDateTime,))
 # c.execute("INSERT INTO users (id, username, email, phone, website, regdate) VALUES (?,?,?,?,?,?)", (2, 'Lee', 'leejaeyun95@naver.com', '010-8589-2763', 'fercho@naver.com', nowDateTime))
 
 
