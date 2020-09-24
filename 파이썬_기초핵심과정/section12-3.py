@@ -1,4 +1,4 @@
-ㄴㅇimport sqlite3
+import sqlite3
 
 # DB 생성(파일)
 conn = sqlite3.connect('./resource/database.db')
