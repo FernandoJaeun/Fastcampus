@@ -1,0 +1,15 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Open applying CSS and JavaScript to a page.html",
+            "file": "C:/Users/leeja/WorkSpace/HTML5/applying CSS and JavaScript to a page.html"
+        }
+    ]
+}
