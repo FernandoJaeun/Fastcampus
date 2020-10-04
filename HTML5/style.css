@@ -12,3 +12,15 @@ html {
   li {
     margin-left: 20px;
   }
+
+  .a{
+    background-color: red;
+  }
+
+  .b{
+    color: blue;
+  }
+
+  .c{
+    color: yellow;
+  }

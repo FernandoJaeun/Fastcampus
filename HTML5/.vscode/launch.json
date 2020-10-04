@@ -7,8 +7,8 @@
         {
             "type": "pwa-chrome",
             "request": "launch",
-            "name": "Open heading.html",
-            "file": "C:/Users/leeja/WorkSpace/HTML5/heading.html",
+            "name": "Open applying CSS and JavaScript to a page.html",
+            "file": "C:/Users/leeja/WorkSpace/Python/FastCampus/HTML5/applying CSS and JavaScript to a page.html",
         }
     ]
 }
