@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/* 공통 요소 */
+html {
+  font-size: 10px;
+  height: 72px;
+}
+
+body {
+  min-width: 1060px;
+  font-size: 1.8rem;
+}
+
+.container {
+  max-width: 1400px;
+  background: red;
+  margin: 0px auto;
+  /* 탑 라이트 바텀 레프트 순으로 쓴다
+     값을 두 개만 쓰면 두 개의 값이 아직 선언되지 않은 방향에 자동으로 적용된다.
+     값을 한 개만 쓰면 4방면의 값이 모두 한 개의 값으로 적용된다.
+  */
+  padding: 0 20px;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+
+.logo > img {
+  background: black;
+}
+
+.nav {
+  text-align: right;
+}
+
+.list{
+  margin: 0;
+}
+
+.list-item {
+  display: inline-block;
+}
+
+.main-content {
+  float: left;
+  width: 70%;
+}
+
+.side-content {
+  float: right;
+  width: 30%;
+}
