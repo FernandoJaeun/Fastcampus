@@ -12,49 +12,100 @@ html {
 body {
   min-width: 1060px;
   font-size: 1.8rem;
+  line-height: 1.6;
+  font-family: Roboto, Avenir, sans-serif;
+}
+
+/* HEADER */
+.header {
+  background: #0c4b33;
+  height: 72px;
+  padding: 15px 0 4px;
 }
 
 .container {
   max-width: 1400px;
-  background: red;
   margin: 0px auto;
   /* 탑 라이트 바텀 레프트 순으로 쓴다
      값을 두 개만 쓰면 두 개의 값이 아직 선언되지 않은 방향에 자동으로 적용된다.
      값을 한 개만 쓰면 4방면의 값이 모두 한 개의 값으로 적용된다.
   */
+  padding: 0px 20px;
+  position: relative;
+  background: red;
+}
+
+.container-float{
+  max-width: 1400px;
+  margin: 0 auto;
   padding: 0 20px;
   position: relative;
+  background: yellow ;
+}
+
+.container-float::after{
+  display: block;
+  content: '';
+  clear: both;
 }
 
 .logo {
   position: absolute;
+  padding-left: inherit;
   top: 0;
   left: 0;
   margin: 0;
 }
 
-.logo > img {
-  background: black;
-}
-
 .nav {
   text-align: right;
+  background: #0c4b33;
 }
 
-.list{
+.list {
   margin: 0;
+  font-size: 0;
 }
 
 .list-item {
   display: inline-block;
+  font-weight: 700;
+  font-size: 1.35rem;
 }
+
+.list-item > a{
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.list-item > a:hover{
+  color: #44b78b;
+}
+
+
+
+/* MAIN */
+
+-main.ftoobaal
 
 .main-content {
   float: left;
   width: 70%;
+  background: blue;
 }
 
 .side-content {
   float: right;
   width: 30%;
+  background: pink;
+}
+
+
+/* FOOTER */
+.footer{
+  clear: both;
+  background: skyblue;
 }
