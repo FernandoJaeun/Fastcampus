@@ -32,6 +32,7 @@
     </header>
 
     <main class="main">
+      <!-- 히어로 -->
       <div class="hero-section">
         <div class="container">
           <p class="intro-desc">
@@ -45,36 +46,103 @@
         <div class="billboard"></div>
       </div>
 
+      <!-- 메인 컨텐츠 -->
       <div class="container-float">
         <div class="main-content">
-          <p class="title">Meet Django</p>
-          <p class="description">
-            Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced
-            developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the
-            wheel. It’s free and open source.
-          </p>
-          <ul class="list">
-            <li class="list-item">
-              <img
-                src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fko.m.wikipedia.org%2Fwiki%2F%25ED%258C%258C%25EC%259D%25BC%3ACircle_-_black_simple.svg&psig=AOvVaw1xs45V1XCY05g0uWKhg_S-&ust=1602493961702000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCMla2ZrOwCFQAAAAAdAAAAABAJ"
-                alt="Ridiculously"
-              />
-              <p class="description">Django was designed to help developers take applications from concept to completion as quickly as possible.</p>
-            </li>
-            <li class="list-item">
-              Reassuringly secure.
-              <p class="description">Django takes security seriously and helps developers avoid many common security mistakes.</p>
-            </li>
-            <li class="list-item">
-              Exceedingly scalable.
-              <p class="description">Some of the busiest sites on the Web leverage Django’s ability to quickly and flexibly scale.</p>
-            </li>
-          </ul>
-          <p>
-            <a href="#" class="cta">Learn More</a>
-          </p>
+          <div class="meet-django">
+            <h2 class="title">Meet Django</h2>
+            <p class="description">
+              Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced
+              developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the
+              wheel. It’s free and open source.
+            </p>
+            <p>
+              <a href="#" class="cta">Learn More</a>
+            </p>
+          </div>
+          <div class="separator"></div>
+          <div class="stay-in-the-loop">
+            <h2 class="title">Stay in the loop</h2>
+            <p class="description">Subscribe to one of our mailing lists to stay up to date with everything in the Django community:</p>
+          </div>
+          <div class="asd123">
+            <!-- Using Django -->
+            <h3 class="mailing-title">
+              <a href="#">Using Django</a>
+            </h3>
+            <p class="mailing-desc">Get help with Django and follow announcements.</p>
+            <!-- form 요소 -->
+            <form class="mailing-form" action="#">
+              <label for="send email for following news"></label>
+              <input type="email" placeholder="  Enter email" id="input-following" name="input-following" />
+              <button class="mailing-form-btn" type="submit"><i class="icon"></i><span class="visuallyhidden">Submit</span></button>
+            </form>
+            <!-- 설명문 -->
+            <p class="mailing-desc">
+              You can also subscribe by sending an email to <a href="#">django-users+subscribe@googlegroups.com</a> and following the instructions
+              that will be sent to you.
+            </p>
+          </div>
+          <div class="qwe123">
+            <!-- Contributing to Django -->
+            <h3 class="mailing-title">
+              <a href="#">Contributing to Django</a>
+            </h3>
+            <p class="mailing-desc">Contribute to the development of Django itself.</p>
+            <!-- form 요소 -->
+            <form class="mailing-form" action="#">
+              <label for="#"></label>
+              <input type="email" placeholder="  Enter email" id="input-following" name="input-following" />
+              <button class="mailing-form-btn" type="submit"><i class="icon"></i><span class="visuallyhidden">Submit</span></button>
+            </form>
+            <!-- 설명문 1 -->
+            <p class="mailing-desc">
+              Before asking a question about how to contribute, read <a href="#"> Contributing to Django</a>. Many frequently asked questions are
+              answered there.
+            </p>
+
+            <div class="separator-mini"></div>
+            <!-- 설명문 2 -->
+            <p class="mailing-desc">
+              Before asking a question about how to contribute, read <a href="#"> Contributing to Django</a>. Many frequently asked questions are
+              answered there.
+            </p>
+          </div>
         </div>
-        <div class="side-content">사이드</div>
+        <!-- side 섹션 -->
+        <div class="side-content">
+          <div>
+            <p class="cta">
+              <a href="#" class="download-django"
+                >Download
+                <em
+                  >latest release: <br />
+                  2.1.7</em
+                ></a
+              >
+            </p>
+            <a href="#" class="document-link">DJANGO DOCUMENTATION</a>
+          </div>
+
+          <div class="separator-mini"></div>
+
+          <div class="latest-news">
+            <h3 class="news-title">Django Technical Board Election Results 2020</h3>
+            <p class="description">Django Technical Board Election Results for the inaugural 2020 election.</p>
+            <p class="writer">Posted by <strong>Frank Wiles</strong> on 10월 1, 2020</p>
+            <a href="#" class="more">more news > </a>
+          </div>
+
+          <div class="separator-mini"></div>
+
+          <div class="get-involved">
+            <h4 class="involved1">#django IRC channel</h4>
+            <p class="context">Chat with other Django users</p>
+            <h4 class="involved2">Ticket system</h4>
+            <p class="context">Reprot bugs and make feature requests</p>
+            <a href="#" class="more">Inside the django community</a>
+          </div>
+        </div>
       </div>
     </main>
 

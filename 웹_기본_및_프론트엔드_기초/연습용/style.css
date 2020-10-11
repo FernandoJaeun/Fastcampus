@@ -103,7 +103,7 @@ body {
   font-weight: 300;
   font-family: Roboto;
 }
-.hero-section > .container > p > a.cta {
+.cta {
   background: #44b78b;
   padding: 1em 50px 1.1em; /* em : 상위 태그 element px의 상대크기*/
   margin: 20px 0;
@@ -113,15 +113,28 @@ body {
   display: inline-block;
   text-decoration: none;
   border-radius: 5px 5px;
-  border-bottom: grey;
+}
+
+.cta > a {
+  color: white;
+  text-decoration: none;
+}
+
+.cta > a > em {
+  color: #cfe3dc;
+  font-family: Roboto;
+  font-style: normal;
 }
 
 .main-content {
   float: left;
   width: 70%;
   padding: 10px 35px;
+  border-bottom: rgb(207, 227, 220);
+  border-bottom-width: 1.1111px;
+  border-bottom-style: solid;
 }
-.main-content > .title {
+.main-content > div > .title {
   font-family: Roboto;
   font-size: 32px;
   font-weight: 400;
@@ -129,7 +142,7 @@ body {
   line-height: 35px;
   color: #0c3c26;
 }
-.main-content > .description {
+.main-content > div > .description {
   font-family: Palatino Linotype;
   font-size: 18px;
   font-weight: 400;
@@ -137,11 +150,123 @@ body {
   line-height: 29px;
   color: #0c3c26;
 }
+.asd123 {
+  float: left;
+  width: 50%;
+  padding: 0 12px;
+}
+
+.qwe123 {
+  float: left;
+  width: 50%;
+  padding: 0 12px;
+}
+.mailing-form {
+  position: relative;
+  margin: 10px 0 30px;
+}
+.mailing-form-btn {
+  position: absolute;
+  top: 30%;
+  right: 10px;
+  border: 0;
+  font-size: 16px;
+  font-weight: 700;
+  background: transparent;
+  color: #44b78b;
+  cursor: pointer;
+}
+.mailing-form-btn:hover {
+  color: aquamarine;
+}
+input[type="email"] {
+  width: 100%;
+  border: 1px solid #cfe3dc;
+  border-radius: 4px;
+  height: 5rem;
+}
+
+.mailing-title > a {
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #25c488;
+  text-decoration: none;
+}
+.mailing-desc {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+}
+.mailing-desc > a {
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12px;
+  color: #25c488;
+  text-decoration: none;
+}
+
+.separator {
+  border-bottom: rgb(207, 227, 220);
+  border-bottom-width: 1.1111px;
+  border-bottom-style: solid;
+  padding: 0px 0px 20px 0px;
+  margin: 0 0 50px 0;
+}
+
+.separator-mini {
+  border-bottom: rgb(207, 227, 220);
+  border-bottom-width: 1.1111px;
+  border-bottom-style: solid;
+  padding: 0px 0px;
+  margin: 30px 10px;
+}
 
 .side-content {
   float: right;
   width: 30%;
-  background: pink;
+  height: auto;
+  background: beige;
+  padding: 10px 15px;
+}
+.side-content > div > h3 {
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 30px;
+  color: #0c3c26;
+}
+
+.side-content > div > h4 {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 20px;
+  color: #44b78b;
+}
+
+.side-content > div > p {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 25px;
+  color: #0c3c26;
+}
+
+.more {
+  text-decoration: none;
+  font-family: Roboto;
+  font-size: 17px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 2px;
+  color: #44b78b;
 }
 
 /* FOOTER */
