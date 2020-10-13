@@ -31,12 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'django.contrib.admin', # 프로젝트 생성시 default 생성된 앱 목록
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'borad',    # 내가 생성한 앱
+    'fcuser'
 ]
 
 MIDDLEWARE = [
