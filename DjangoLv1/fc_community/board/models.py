@@ -1,8 +1,8 @@
 from django.db import models
 
-# Create your models here.
-class model1():
-    def tset(self, request):
-        pass
-    
-        return 1
+class models():
+    def test(self, request):
+        def tset(self, request):
+            pass
+            
+            return 1

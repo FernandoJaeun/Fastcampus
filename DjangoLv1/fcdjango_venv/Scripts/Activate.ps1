@@ -49,3 +49,5 @@ if (Test-Path env:PYTHONHOME) {
 # Add the venv to the PATH
 copy-item env:PATH env:_OLD_VIRTUAL_PATH
 $env:PATH = "$env:VIRTUAL_ENV\Scripts;$env:PATH"
+$env:PATH += ';G:\SQLite3' 
+& sqlite3.exe

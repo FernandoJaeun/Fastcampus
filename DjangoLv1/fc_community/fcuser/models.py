@@ -1,15 +1,14 @@
 from django.db import models
 
 # Create your models here.
+class Test(models.Model):
+    username = models.CharField(max_length=14)
+    phone = models.CharField(max_length=10, null=True)
+    class Meta:
+        db_table = "asd"
+        verbose_name = "패스트 캠퍼스 사요ㅕㅇ자"   # 관리자 페이지에 표시될 모델 이름
+        verbose_name_plural = "패캠"    # 모델 복수 이름(defalut는 복수로 표시됨)
 
-
-class Fcuser(models.Model):
-    username = models.CharField(max_length=64,
-                                verbose_name='사용자명')
-    password = models.CharField(max_length=64,
-                                verbose_name='비밀번호')
-    registered_dttm = models.models.DateTimeField(auto_now_add=True, # 날짜 기입을 생략하면 자동으로 현재 날짜 입력
-                                                  verbose_name='등록시간')
-
-    class Meta: # DB에서 테이블 명을 지정하고 싶을 때.
-        db_table  = 'fastcampus_fcuser'
+    # 클래스가 변환됐을 때 호출되는 함수
+    def __str__(self):  # string임. 내부클래스. 이 클래스에 입력된 값을 문자열(uesrname)로 반환
+        return self.username, self.phone
