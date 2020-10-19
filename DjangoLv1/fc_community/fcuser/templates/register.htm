@@ -28,40 +28,43 @@
 
       <div class="row">
         <div class="col-12">
-          <form>
+          <form method="POST" action=".">
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+                {% csrf_token %}
+              <label for="username">사용자 이름</label>
               <input
-                type="email"
+                type="text"
                 class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-                placeholder="Enter email"
+                id="username"
+                placeholder="이름을 입력하세요." 
+                name="username"
               />
-              <small id="emailHelp" class="form-text text-muted"
-                >We'll never share your email with anyone else.</small
+              <small id="usernameHelper" class="form-text text-muted"
+                >결과보다 열정이 아름답습니다.</small
               >
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
+              <label for="password">비밀번호</label>
               <input
                 type="password"
                 class="form-control"
-                id="exampleInputPassword1"
-                placeholder="Password"
+                id="password"
+                placeholder="비밀번호를 입력하세요"
+                name="password"
               />
             </div>
-            <div class="form-group form-check">
+            <div class="form-group">
+              <label for="password">비밀번호 확인</label>
               <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
+                type="password"
+                class="form-control"
+                id="re-password"
+                placeholder="한 번 더 비밀번호를 입력하세요"
+                name="re-password"
               />
-              <label class="form-check-label" for="exampleCheck1"
-                >Check me out</label
-              >
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <button type="submit" class="btn btn-primary">등록</button>
           </form>
         </div>
       </div>
