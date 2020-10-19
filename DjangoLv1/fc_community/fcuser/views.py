@@ -1,10 +1,21 @@
 from django.shortcuts import render
+from .models import Test
+
 
 # Create your views here.
 def register(request):     # 나중에 url을 지정해줄건데, 해당 url로 접속 시 받게 될 매개변수가 request
     if request.method =="GET":
         return render(request, 'register.htm')
     elif request.method =="POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        re_password = request.POST['re-password']
+
+        fcuser = Test(
+            username=username,
+            password=password
+        )
+        fcuser.save()
         return render(request, 'register.htm')
 
     return render(request, 'register.htm')  # 반환하고 싶은 파일 입력, 경로는 templates를 자동으로 바라보고 있으므로 생략
