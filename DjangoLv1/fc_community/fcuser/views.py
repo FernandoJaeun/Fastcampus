@@ -11,17 +11,19 @@ def register(request):     # 나중에 url을 지정해줄건데, 해당 url로 
         return render(request, 'register.htm')
     elif request.method =="POST":
         username = request.POST.get('username', None) # register 페이지에서 응답이 온다. 그게 GET이거나 POST이다.
+        useremail = request.POST.get('useremail', None) # 화면으로 부터 받은 데이터
         password = request.POST.get('password', None)
         re_password = request.POST.get('re-password', None)
 
         res_data = {}
-        if not (username and password and re_password):
+        if not (username and useremail and password and re_password):
             res_data['error'] = "모든 값을 입력해주세요"
         elif password != re_password:
             res_data['error'] = "비밀번호가 다릅니다!"
         else:
             fcuser = Test(  # 그러면 모델에서 Test 테이블을 가져와
                 username=username,  # username과
+                useremail=useremail,
                 password=make_password(password)   # password를 저장한다.
             )
             fcuser.save()   # 생성된 값은 저장한다.

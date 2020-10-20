@@ -2,8 +2,11 @@ from django.db import models
 
 # Create your models here.
 class Test(models.Model):
-    username = models.CharField(max_length=14)
-    password = models.CharField(max_length=10, null=True)
+    username = models.CharField(max_length=32, verbose_name = "사용자명")   
+    password = models.CharField(max_length=32, null=True, verbose_name = "암호")
+    useremail = models.EmailField(max_length=128, verbose_name = "사용자 이메일")
+    registered_dttm = models.DateTimeField(auto_now_add=True, verbose_name="등록시간")
+
     class Meta:
         db_table = "asd"
         verbose_name = "패스트 캠퍼스 사용자"   # 관리자 페이지에 표시될 모델 이름
