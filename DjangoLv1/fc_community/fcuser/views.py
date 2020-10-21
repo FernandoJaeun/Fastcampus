@@ -1,4 +1,4 @@
-from django.contrib.auth.hashers import make_password
+from django.contrib.auth.hashers import check_password, make_password
 from django.http.response import HttpResponse
 from django.shortcuts import render
 
@@ -32,3 +32,26 @@ def register(request):     # 나중에 url을 지정해줄건데, 해당 url로 
 
         # 반환하고 싶은 파일 입력, 경로는 templates를 자동으로 바라보고 있으므로 생략
         # 만약 templates안에 하위 폴더가 존재한다면, folder/folder2/register.html 등으로 표기!
+
+def login(request):
+    if request.method =="GET":
+        return render(request, "login.htm")
+
+    if request.method =="POST":
+        useremail = request.POST.get('useremail', None)
+        password = request.POST.get('password',None)
+
+        res_data={}
+        if not (useremail and password):
+            res_data['error'] = "모든 값을 입력하세요."
+        else:
+            fcuser = Test.objects.get(useremail = useremail) # key - value
+            if check_password(password, fcuser.password):
+                # 로그인 처리! , 세션 기능, 리다이렉트
+                return render(request, "main.htm")
+            else:
+                res_data['error'] = "패스워드가 일치하지 않습니다."
+        return render(request, "login.htm", res_data)
+
+
+        

@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit =no"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row mt-5">    <!-- class바로 옆 글자가 class 이름이고, mt-5는 속성이다 -->
+        <div class="col-12 text-center"> <!-- 텍스트 정렬을 여기서! 크~ -->
+          <h1>로그인</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+            {{ error }}
+      <div class="row">
+        <div class="col-12">
+          <form method="POST" action=".">
+            <div class="form-group">
+                {% csrf_token %}
+              <label for="username">사용자 이메일</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                placeholder="이름을 입력하세요." 
+                name="username"
+              />
+              <small id="usernameHelper" class="form-text text-muted"
+                >좋은 하루 되세요!.</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="password">비밀번호</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="비밀번호를 입력하세요"
+                name="password"
+              />
+            </div>
+            </div>
+            <button type="submit" class="btn btn-primary">로그인</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
