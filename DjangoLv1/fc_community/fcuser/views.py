@@ -58,11 +58,19 @@ def login(request):
         return render(request, "login.htm", res_data)
 
 
+def logout(request):
+    if request.session.get('user'):
+        del(request.session['user'])
+    
+    return redirect('/')
+        
+
+
 def home(request):
     user_id = request.session.get('user')
 
     if user_id :
         fcuser = Test.objects.get(pk=user_id)
-        return HttpResponse(fcuser.registered_dttm)
+        return HttpResponse( fcuser.username)
 
     return HttpResponse('home') # 세션을 날리는 방법은?
