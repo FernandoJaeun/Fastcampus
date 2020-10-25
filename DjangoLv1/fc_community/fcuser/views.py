@@ -1,15 +1,13 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.hashers import check_password, make_password
-from .models import Test
-from django.core.mail.backends import console
-import logging
+from .models import Fcuser
+from .form import LoginForm
 
-logger = logging.getLogger(__name__)
 # Create your views here.
 
 
-def register(request):     # 나중에 url을 지정해줄건데, 해당 url로 접속 시 받게 될 매개변수가 request
+def register(request):     # request는 해당 페이지로 들어올 때 넘겨받은 데이터
     if request.method == "GET":
         return render(request, 'register.htm')
     elif request.method == "POST":
@@ -25,7 +23,7 @@ def register(request):     # 나중에 url을 지정해줄건데, 해당 url로 
         elif password != re_password:
             res_data['error'] = "비밀번호가 다릅니다!"
         else:
-            fcuser = Test(  # 그러면 모델에서 Test 테이블을 가져와
+            fcuser = Fcuser(  # 그러면 모델에서 Fcuser 테이블을 가져와
                 username=username,  # username과
                 useremail=useremail,
                 password=make_password(password)   # password를 저장한다.
@@ -40,26 +38,15 @@ def register(request):     # 나중에 url을 지정해줄건데, 해당 url로 
 
 
 def login(request):
-    if request.method == "GET":
-        return render(request, "login.htm")
-
     if request.method == "POST":
-        useremail = request.POST.get('useremail', None)
-        password = request.POST.get('password', None)
-
-        res_data = {}
-        if not (useremail and password):
-            res_data['error'] = "모든 값을 입력하세요."
-        else:
-            # key - value (이메일이 정보를 get)
-            fcuser = Test.objects.get(useremail=useremail)
-            if check_password(password, fcuser.password):
-                # 세션 - 쿠키 설정 로그인 정보 유지
-                request.session['user'] = fcuser.id
-                return redirect('/')  # 홈
-            else:
-                res_data['error'] = "패스워드가 일치하지 않습니다."
-        return render(request, "login.htm", res_data)
+        form = LoginForm(request.POST)
+        if form.is_valid(): # 유효성 검사 
+            # session 만들기
+            request.session['user'] = form.user_id
+            return redirect('/') # id, password 이상 없을 시 홈으로 이동
+    else : 
+        form = LoginForm()
+    return render(request, 'login.htm', {'form' : form})
 
 
 def logout(request):
@@ -71,9 +58,8 @@ def logout(request):
 
 def home(request):
     user_id = request.session.get('user')
-
     if user_id:
-        fcuser = Test.objects.get(pk=user_id)
+        fcuser = Fcuser.objects.get(pk=user_id)
         return HttpResponse(fcuser.username)
 
     return HttpResponse('home')  # 세션을 날리는 방법은?

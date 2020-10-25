@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Test(models.Model):
+class Fcuser(models.Model):
     username = models.CharField(max_length=32, verbose_name = "사용자명")   
     password = models.CharField(max_length=32, null=True, verbose_name = "암호")
     useremail = models.EmailField(max_length=128, verbose_name = "사용자 이메일")
