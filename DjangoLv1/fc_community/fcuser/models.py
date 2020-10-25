@@ -15,5 +15,4 @@ class Test(models.Model):
     # 클래스가 변환됐을 때 호출되는 함수
     def __str__(self):  # string임. 내부클래스. 이 클래스에 입력된 값을 문자열(uesrname)로 반환
         return self.username, self.password
-
     

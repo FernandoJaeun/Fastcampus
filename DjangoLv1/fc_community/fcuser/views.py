@@ -7,6 +7,8 @@ import logging
 
 logger = logging.getLogger(__name__)
 # Create your views here.
+
+
 def register(request):     # 나중에 url을 지정해줄건데, 해당 url로 접속 시 받게 될 매개변수가 request
     if request.method == "GET":
         return render(request, 'register.htm')
@@ -49,9 +51,11 @@ def login(request):
         if not (useremail and password):
             res_data['error'] = "모든 값을 입력하세요."
         else:
-            fcuser = Test.objects.get(useremail=useremail)  # key - value (이메일이 정보를 get)
-            if check_password(password, fcuser.password):   
-                request.session['user'] = fcuser.id         # 세션 - 쿠키 설정 로그인 정보 유지
+            # key - value (이메일이 정보를 get)
+            fcuser = Test.objects.get(useremail=useremail)
+            if check_password(password, fcuser.password):
+                # 세션 - 쿠키 설정 로그인 정보 유지
+                request.session['user'] = fcuser.id
                 return redirect('/')  # 홈
             else:
                 res_data['error'] = "패스워드가 일치하지 않습니다."
@@ -61,16 +65,15 @@ def login(request):
 def logout(request):
     if request.session.get('user'):
         del(request.session['user'])
-    
+
     return redirect('/')
-        
 
 
 def home(request):
     user_id = request.session.get('user')
 
-    if user_id :
+    if user_id:
         fcuser = Test.objects.get(pk=user_id)
-        return HttpResponse( fcuser.username)
+        return HttpResponse(fcuser.username)
 
-    return HttpResponse('home') # 세션을 날리는 방법은?
+    return HttpResponse('home')  # 세션을 날리는 방법은?
