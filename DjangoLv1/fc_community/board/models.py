@@ -13,5 +13,4 @@ class Board(models.Model):
         verbose_name_plural = '패스트캠퍼스 게시글\'s'
         
     def __str__(self):
-        template = '{0.title}'
-        return template.format(self)
+        return self.title
