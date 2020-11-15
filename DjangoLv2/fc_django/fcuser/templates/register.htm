@@ -1,0 +1,38 @@
+{% extends 'base.htm' %} 
+
+{% block contents %}
+
+<div class="row mt-5">
+  <div class="col-12 text-center">
+    <h1>회원가입</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    {{ error }}
+    <div class="row">
+      <div class="col-12">
+        <!-- 로그인 정보 입력 폼 -->
+        <form method="POST" action=".">
+          <div class="form-group">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                <!-- [label for]와 [input id]를 같게 하는 이유 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label -->
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label> 
+                <input id="{{ field.id_for_label }}" class = "form-control" type="{{ field.field.widget.input_type }}" placeholder="{{ field.label }}" name = "{{ field.name }}">
+            </div>
+            {% if field.errors %}
+            <span class = "error-message">{{ field.errors }}</span>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <button type="submit" class="btn btn-primary">가입하기</button>
+        </form>
+        
+    </div>
+  </div>
+</div>
+
+{% endblock %}
